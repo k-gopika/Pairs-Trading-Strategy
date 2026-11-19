@@ -96,26 +96,7 @@ Pairwise cointegration testing was evaluated over $\binom{50}{2} = 1,225$ combin
 - **Statistical Cointegration**: Full-sample Engle-Granger test confirms cointegration ($p < 0.02$).
 
 ---
-
-## Execution Logic & Risk Management
-
-The strategy executes via a discrete event simulation engine with built-in risk constraints:
-
-```mermaid
-flowchart TD
-    A[Calculate Daily Rolling Z-score] --> B{Position Open?}
-    B -- No --> C{Check Entry Conditions}
-    C -- "Z > +1.25" --> D[Short STT / Long C<br>50% Capital Each]
-    C -- "Z < -1.25" --> E[Long STT / Short C<br>50% Capital Each]
-    C -- "|Z| <= 1.25" --> F[Wait / No Action]
-    
-    B -- Yes --> G{Check Risk & Exit}
-    G -- "Unrealized Loss > $5,000" --> H[Trigger Stop-Loss<br>Liquidate Both Legs]
-    G -- "|Z| < 0.5" --> I[Target Reached<br>Close Both Legs (Take Profit)]
-    G -- Otherwise --> J[Hold Position]
-```
-
-### Risk Controls
+## Risk Controls
 1. **Capital Sizing**: Initial capital $V_0 = \$100,000$, split equally across both legs ($\$50,000$ per leg) to maintain dollar neutrality.
 2. **Dynamic Entry**: Threshold $\pm 1.25\sigma$ filters out minor fluctuations and trades only statistically significant mispricings.
 3. **Mean-Reversion Exit**: Position exits when $|Z_t| < 0.5\sigma$, locking in convergence gains before spread overshoots.
