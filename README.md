@@ -212,8 +212,3 @@ jupyter notebook Pair_Trading_Algorithm.ipynb
 
 ---
 
-## Author
-
-**Gopika Kuruva**  
-Department of Electrical Engineering, Indian Institute of Technology Kanpur  
-[LinkedIn](https://linkedin.com/in/gopika-kuruva) | [GitHub](https://github.com/k-gopika) | [Email](mailto:kuruvag23@iitk.ac.in)
