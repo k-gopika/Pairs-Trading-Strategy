@@ -1,10 +1,4 @@
 # Statistical Arbitrage: Pairs Trading Strategy in Financial Markets
-
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Quantitative Finance](https://img.shields.io/badge/Strategy-Statistical%20Arbitrage-orange.svg)]()
-[![Market Neutral](https://img.shields.io/badge/Beta-Market%20Neutral-purple.svg)]()
-
 An end-to-end quantitative research and algorithmic trading framework implementing a **market-neutral statistical arbitrage (pairs trading) strategy**. The strategy identifies cointegrated asset pairs across a multi-asset universe (equities and global indices), models mean-reverting price dynamics, generates dynamic z-score trading signals, and evaluates strategy performance with risk management constraints (stop-loss, leverage limits, and trade duration tracking).
 
 ---
