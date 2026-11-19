@@ -62,8 +62,14 @@ $$\varepsilon_t = Y_t - \beta X_t \sim I(0)$$
 **Procedure:**
 1. **Step 1 (OLS Regression)**: Estimate the static hedge ratio $\beta$:
    $$Y_t = \alpha + \beta X_t + \varepsilon_t$$
-2. **Step 2 (Residual Unit Root Test)**: Perform an ADF test on the estimated residuals $\hat{\varepsilon}_t$:
-   $$\Delta \hat{\varepsilon}_t = \gamma \hat{\varepsilon}_{t-1} + \sum_{i=1}^p \delta_i \Delta \hat{\varepsilon}_{t-i} + u_t$$
+2. **Step 2 Residual Unit Root Test**: Perform an Augmented Dickey-Fuller (ADF) test on the estimated residuals, $\hat{\varepsilon}_t$:
+
+$$
+\Delta \hat{\varepsilon}_t =
+\gamma \hat{\varepsilon}_{t-1}
++ \sum_{i=1}^{p} \delta_i \Delta \hat{\varepsilon}_{t-i}
++ u_t
+$$
    *Note: Because residuals are estimated via OLS (minimizing variance), standard Dickey-Fuller critical values cannot be used. We use MacKinnon / Engle-Yoo augmented critical values.*
 
 ### 3. Spread vs. Price Ratio Modeling
